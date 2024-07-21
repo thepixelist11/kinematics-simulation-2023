@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "electron \"C:\\Users\\Benan\\Desktop\\Physics Simulation\\src\\main.js\""
+    "start": "electron \"/home/ben/Documents/programming/Physics-Simulation/src/main.js\""
   },
   "author": "thepixelist",
   "devDependencies": {

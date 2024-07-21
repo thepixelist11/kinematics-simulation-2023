@@ -122,16 +122,16 @@ function editWall() {
 }
 
 function editPoint() {
-  if(controller.selectedPoint) {
+  if (controller.selectedPoint) {
     const p = controller.selectedPoint
     ipcRenderer.send('disableMenuItem', 'editCOR')
     ipcRenderer.send('disableMenuItem', 'changeGrav')
-  ipcRenderer.send('disableMenuItem', 'editZoom')
-  ipcRenderer.send('disableMenuItem', 'editWall')
+    ipcRenderer.send('disableMenuItem', 'editZoom')
+    ipcRenderer.send('disableMenuItem', 'editWall')
     ipcRenderer.send('disableMenuItem', 'editPoint')
-    
+
     const menuHeight = 600
-    
+
     const menuBG = document.createElement('div')
     menuBG.classList.add('menuBoxBack')
     menuBG.style.width = `auto`
@@ -140,17 +140,17 @@ function editPoint() {
     menuBG.style.left = '50%'
     menuBG.style.transform = 'translate(-50%, -50%)'
     document.body.appendChild(menuBG)
-    
+
     const title = document.createElement('p')
     title.classList.add('menuBoxTitle')
     title.innerHTML = 'Edit Selected Point'
     menuBG.appendChild(title)
-    
+
     const inputDiv = document.createElement('div')
     inputDiv.style.display = 'flex'
     inputDiv.style.flexDirection = 'column'
     menuBG.appendChild(inputDiv)
-    
+
     const xPos = document.createElement('div')
     const xInput = document.createElement('input')
     xInput.id = 'xInput'
@@ -274,13 +274,13 @@ function editPoint() {
     color.appendChild(colorLabel)
     color.appendChild(colorInput)
     inputDiv.appendChild(color)
-    
+
     inputDiv.appendChild(document.createElement('br'))
     const confirm = document.createElement('button')
     confirm.classList.add('menuBoxConfirm')
     confirm.innerHTML = 'OK'
     inputDiv.appendChild(confirm)
-    
+
     confirm.onclick = () => {
       ipcRenderer.send('enableMenuItem', 'changeGrav')
       ipcRenderer.send('enableMenuItem', 'editWall')
@@ -405,7 +405,7 @@ function editZoom() {
     ipcRenderer.send('enableMenuItem', 'editPoint')
     mainCam.zoom = parseFloat(input.value)
 
-    if(controller.selectedPoint) {
+    if (controller.selectedPoint) {
       mainCam.x = (controller.selectedPoint.x * mainCam.zoom - canvas.width / 2)
       mainCam.y = (controller.selectedPoint.y * mainCam.zoom - canvas.height / 2)
     }
