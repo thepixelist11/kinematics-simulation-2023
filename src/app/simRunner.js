@@ -8,8 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function runSim(simFile, timeToRun, ts = 0.01667, dataCollectInterval = 100) {
-    return __awaiter(this, void 0, void 0, function* () {
+function runSim(simFile_1, timeToRun_1) {
+    return __awaiter(this, arguments, void 0, function* (simFile, timeToRun, ts = 0.01667, dataCollectInterval = 100) {
         loadSimulation(simFile);
         let data = {
             gravity: gravity,
@@ -68,8 +68,8 @@ function runSim(simFile, timeToRun, ts = 0.01667, dataCollectInterval = 100) {
         });
     });
 }
-function runAllSims(dirPath, timeToRun, ts = 16.67, dataCollectInterval = 10) {
-    return __awaiter(this, void 0, void 0, function* () {
+function runAllSims(dirPath_1, timeToRun_1) {
+    return __awaiter(this, arguments, void 0, function* (dirPath, timeToRun, ts = 16.67, dataCollectInterval = 10) {
         const dirList = fs.readdirSync(dirPath);
         let data = {};
         for (let i = 0; i < dirList.length; i++) {

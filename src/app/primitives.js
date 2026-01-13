@@ -228,7 +228,6 @@ class Point {
         }
         Eclipse.drawPoint(ctx, this.position, this.radius, this.color);
     }
-    // Sets the standard properties to the initial properties, resetting the point
     reset() {
         this.position = __classPrivateFieldGet(this, _Point_initialPosition, "f");
         this.lastPosition = this.position;

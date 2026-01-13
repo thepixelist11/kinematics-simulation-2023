@@ -8,7 +8,7 @@ function drawPoints(points, ctx) {
         points[i].draw(ctx);
     }
 }
-function drawPointArrows(points, ctx, arrowSize, arrowWidth, xColor, yColor, centreColor, xHoveredColor, yHoveredColor, centreHoveredColor) {
+function drawPointArrows(points, arrowSize, arrowWidth, xColor, yColor, centreColor, xHoveredColor, yHoveredColor, centreHoveredColor) {
     var _a;
     for (let i = 0; i < points.length; i++) {
         if (!canDrawScene)
@@ -96,7 +96,7 @@ function drawOverlay(ctx, options) {
     ctx.save();
     ctx.translate(-mainCam.x, -mainCam.y);
     ctx.scale(mainCam.zoom, mainCam.zoom);
-    drawPointArrows(mainGrid.points, ctx, ((_c = (_b = options.selectionArrows) === null || _b === void 0 ? void 0 : _b.lengthAdded) !== null && _c !== void 0 ? _c : 20) / mainCam.zoom, ((_e = (_d = options.selectionArrows) === null || _d === void 0 ? void 0 : _d.width) !== null && _e !== void 0 ? _e : 2) / mainCam.zoom, ((_g = (_f = options.selectionArrows) === null || _f === void 0 ? void 0 : _f.xColor) !== null && _g !== void 0 ? _g : Eclipse.Color.GREEN), ((_j = (_h = options.selectionArrows) === null || _h === void 0 ? void 0 : _h.yColor) !== null && _j !== void 0 ? _j : Eclipse.Color.BLUE), ((_l = (_k = options.selectionArrows) === null || _k === void 0 ? void 0 : _k.centreColor) !== null && _l !== void 0 ? _l : Eclipse.Color.YELLOW), ((_o = (_m = options.selectionArrows) === null || _m === void 0 ? void 0 : _m.xHoveredColor) !== null && _o !== void 0 ? _o : Eclipse.Color.FORESTGREEN), ((_q = (_p = options.selectionArrows) === null || _p === void 0 ? void 0 : _p.yHoveredColor) !== null && _q !== void 0 ? _q : Eclipse.Color.MIDNIGHTBLUE), ((_s = (_r = options.selectionArrows) === null || _r === void 0 ? void 0 : _r.centreHoveredColor) !== null && _s !== void 0 ? _s : Eclipse.Color.GOLD));
+    drawPointArrows(mainGrid.points, ((_c = (_b = options.selectionArrows) === null || _b === void 0 ? void 0 : _b.lengthAdded) !== null && _c !== void 0 ? _c : 20) / mainCam.zoom, ((_e = (_d = options.selectionArrows) === null || _d === void 0 ? void 0 : _d.width) !== null && _e !== void 0 ? _e : 2) / mainCam.zoom, ((_g = (_f = options.selectionArrows) === null || _f === void 0 ? void 0 : _f.xColor) !== null && _g !== void 0 ? _g : Eclipse.Color.GREEN), ((_j = (_h = options.selectionArrows) === null || _h === void 0 ? void 0 : _h.yColor) !== null && _j !== void 0 ? _j : Eclipse.Color.BLUE), ((_l = (_k = options.selectionArrows) === null || _k === void 0 ? void 0 : _k.centreColor) !== null && _l !== void 0 ? _l : Eclipse.Color.YELLOW), ((_o = (_m = options.selectionArrows) === null || _m === void 0 ? void 0 : _m.xHoveredColor) !== null && _o !== void 0 ? _o : Eclipse.Color.FORESTGREEN), ((_q = (_p = options.selectionArrows) === null || _p === void 0 ? void 0 : _p.yHoveredColor) !== null && _q !== void 0 ? _q : Eclipse.Color.MIDNIGHTBLUE), ((_s = (_r = options.selectionArrows) === null || _r === void 0 ? void 0 : _r.centreHoveredColor) !== null && _s !== void 0 ? _s : Eclipse.Color.GOLD));
     ctx.restore();
     // Camera Position
     if (options.cameraPos && options.cameraPos.enabled) {

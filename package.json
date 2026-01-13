@@ -7,17 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "electron \"/home/ben/Documents/programming/Physics-Simulation/src/main.js\""
+    "start": "electron ./src/main.js"
   },
   "author": "thepixelist",
   "devDependencies": {
-    "@types/electron": "^1.6.10",
     "@types/node": "^20.8.9",
-    "electron": "^26.3.0"
+    "electron": "^39.2.7"
   },
   "dependencies": {
-    "canvas": "^2.11.2",
-    "typescript": "^2.0.4",
-    "undici-types": "^5.27.0"
+    "typescript": "^2.0.4"
   }
 }

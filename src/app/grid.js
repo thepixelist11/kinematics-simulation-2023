@@ -75,10 +75,10 @@ class Grid {
                 const posCellIndicies = __classPrivateFieldGet(this, _Grid_instances, "m", _Grid_possibleCellIndicies).call(this, p);
                 for (let j = posCellIndicies.left; j <= posCellIndicies.right; j++) {
                     for (let k = posCellIndicies.top; k <= posCellIndicies.bottom; k++) {
-                        const gridPosition = new Eclipse.Vector2(j * __classPrivateFieldGet(this, _Grid_cellSize, "f") + (this.cellSize * 0.5), k * __classPrivateFieldGet(this, _Grid_cellSize, "f") + (this.cellSize * 0.5));
+                        const gridPosition = new Eclipse.Vector2(j * __classPrivateFieldGet(this, _Grid_cellSize, "f") + this.cellSize * 0.5, k * __classPrivateFieldGet(this, _Grid_cellSize, "f") + this.cellSize * 0.5);
                         const cellPos = new Eclipse.Vector2(j, k);
                         // Checks if any part of the point is inside the grid cell
-                        if (gridPosition.dist(p.position) <= p.radius + (__classPrivateFieldGet(this, _Grid_cellSize, "f") * Math.SQRT1_2)) {
+                        if (gridPosition.dist(p.position) <= p.radius + __classPrivateFieldGet(this, _Grid_cellSize, "f") * Math.SQRT1_2) {
                             if (__classPrivateFieldGet(this, _Grid_pointsCells, "f").has(pointIdentifier)) {
                                 let existingCells = __classPrivateFieldGet(this, _Grid_pointsCells, "f").get(pointIdentifier);
                                 existingCells === null || existingCells === void 0 ? void 0 : existingCells.push(cellPos.toString());
@@ -171,7 +171,7 @@ class Grid {
             }, {}),
             gravity: JSON.stringify(gravity),
             COR: COR,
-            walls: this.walls.map(wall => wall.toJSON())
+            walls: this.walls.map(wall => wall.toJSON()),
         };
     }
     fromJSON(jsonString) {
@@ -210,11 +210,7 @@ _Grid_cells = new WeakMap(), _Grid_points = new WeakMap(), _Grid_cellSize = new 
         // Subtract by 1 to avoid any unecessary checks
         left: Math.floor(p.rect.left / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
         top: Math.floor(p.rect.top / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
-        right: p.rect.right % __classPrivateFieldGet(this, _Grid_cellSize, "f") === 0 ?
-            Math.floor(p.rect.right / __classPrivateFieldGet(this, _Grid_cellSize, "f")) - 0 :
-            Math.floor(p.rect.right / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
-        bottom: p.rect.bottom % __classPrivateFieldGet(this, _Grid_cellSize, "f") === 0 ?
-            Math.floor(p.rect.bottom / __classPrivateFieldGet(this, _Grid_cellSize, "f")) - 0 :
-            Math.floor(p.rect.bottom / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
+        right: p.rect.right % __classPrivateFieldGet(this, _Grid_cellSize, "f") === 0 ? Math.floor(p.rect.right / __classPrivateFieldGet(this, _Grid_cellSize, "f")) - 0 : Math.floor(p.rect.right / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
+        bottom: p.rect.bottom % __classPrivateFieldGet(this, _Grid_cellSize, "f") === 0 ? Math.floor(p.rect.bottom / __classPrivateFieldGet(this, _Grid_cellSize, "f")) - 0 : Math.floor(p.rect.bottom / __classPrivateFieldGet(this, _Grid_cellSize, "f")),
     };
 };
